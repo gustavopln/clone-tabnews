@@ -12,7 +12,7 @@ async function status(request, response) {
     text: "SELECT count(*)::int FROM pg_stat_activity WHERE datname = $1;",
     values: [dbName],
   });
-  // "SELECT count(*)::int FROM pg_stat_activity WHERE datname = 'local_db';",
+  // "SELECT count(*)::int FROM pg_stat_activity WHERE datname = 'local_db';"
   const dbOpenedConnectionsValue = dbOpenedCoonectionsResult.rows.length;
 
   const updatedAt = new Date().toISOString();
